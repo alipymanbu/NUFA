@@ -1,112 +1,25 @@
-# NUFA
-Code Repository for the paper "Neural User Factor Adaptation for Text Classification: Learning to Generalize Across Author Demographics" at *SEM 2019.
+# Nufa
 
-![Image of NUFA](https://github.com/xiaoleihuang/NUFA/blob/master/model.png)
+本仓库是「Nufa」的安卓版本获取入口，附使用资料索引。
 
-## A. Data
-Please download the data from [http://michaeljpaul.com/files/starsem2019_demographics.data.zip](http://michaeljpaul.com/files/starsem2019_demographics.data.zip)
+## 安装文件资源（夸克网盘）
 
-## B. Test Environment
-Ubuntu 16.04, Python 3.6+
+> **Nufa 安装文件资源（夸克网盘）**：[https://pan.quark.cn/s/44ae7d6429e9](https://pan.quark.cn/s/44ae7d6429e9)
 
-## C. Preparations
- 1. Install [conda 3.6+](https://www.anaconda.com/distribution/);
- 2. Clone the repository
-  * `git clone https://github.com/xiaoleihuang/NUFA.git`
-  * `cd NUFA`
- 3. Install packages `pip install -r requirements.txt`;
- 4. Install tokenizer model, `python -c "import nltk; nltk.download('punkt')"`;
- 5. Download data and unzip the data:
-   * `wget https://cmci.colorado.edu/~mpaul/files/starsem2019_demographics.data.zip`
-   * `unzip starsem2019_demographics.data.zip`
-   * move the data: `mv ./data_hash/* data && rm -r ./data_hash/`
- 6. Download pretrained embeddings:
-   * You can download [Google](https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit) and [GloVe](http://nlp.stanford.edu/data/glove.twitter.27B.zip) pretrained embeddings;
-   * Our pretrained embeddings [Dropbox](https://www.dropbox.com/s/t9muudx4jrw61ge/embeddings.zip?dl=0)
-   * unzip to the folder /project_folder/w2v/
+## 官方项目
 
-## D. Instructions for analysis sections (2.2 and 2.3):
- * 2.2 Are User Factors Encoded in Text?
-   * 2.2.1 User Factor Prediction
-     * `cd document_predictability`
-     * `python demographic_clf.py`
-     * back to the project root folder: `cd ..`
-   * 2.2.2 Topic Analysis
-     * `cd topic`
-     * Build topic models: `python build_model.py`
-     * Calculate log ratios across demographic groups: `python viz_ratio.py`
-     * Images will be saved to the ./ratios/ folder.
-     * `cd ..`
- * 2.3 Are Document Categories Expressed Differently by Different User Groups?
-  * `cd word_overlap`
-  * `python cal_mi.py`
-  * You can change the size of top features
+- 上游项目：[xiaoleihuang/NUFA](https://github.com/xiaoleihuang/NUFA)
 
+## 更多资料
 
-## E. How to run
-### Experiment Setups
-  1. Split the data into train/valid/test sets:
-    * `cd data`
-    * `python data_split.py`
-  2. Build tokenizer:
-    * `cd tokenizer`
-    * `python build_tok.py`
-    * `cd ..`
-  3. Convert raw data into indices of words:
-    * `python data2indices.py`
-  4. Build initialized weights for embeddings:
-    * `cd weight`
-    * `python build_wt.py`
-  5. Build vectorizers for non-neural models:
-    * `cd /path_to_data_folder/`
-    * `python fea_builder.py`
+- [下载与安装教程](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Nufa/%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B.md)
+- [效果不自然或闪退怎么排查](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Nufa/%E6%95%88%E6%9E%9C%E4%B8%8D%E8%87%AA%E7%84%B6%E6%88%96%E9%97%AA%E9%80%80%E6%80%8E%E4%B9%88%E6%8E%92%E6%9F%A5.md)
+- [滤镜贴纸与模板怎么用](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Nufa/%E6%BB%A4%E9%95%9C%E8%B4%B4%E7%BA%B8%E4%B8%8E%E6%A8%A1%E6%9D%BF%E6%80%8E%E4%B9%88%E7%94%A8.md)
+- [照片隐私与数据说明](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Nufa/%E7%85%A7%E7%89%87%E9%9A%90%E7%A7%81%E4%B8%8E%E6%95%B0%E6%8D%AE%E8%AF%B4%E6%98%8E.md)
+- [瘦身美体修图怎么弄](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Nufa/%E7%98%A6%E8%BA%AB%E7%BE%8E%E4%BD%93%E4%BF%AE%E5%9B%BE%E6%80%8E%E4%B9%88%E5%BC%84.md)
+- [订阅与付费功能说明](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Nufa/%E8%AE%A2%E9%98%85%E4%B8%8E%E4%BB%98%E8%B4%B9%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E.md)
+- [全部软件目录](https://github.com/alipymanbu/Android/blob/master/%E5%85%A8%E9%83%A8%E8%BD%AF%E4%BB%B6%E7%9B%AE%E5%BD%95.md)
 
-### Baselines
-  1. N-gram:
-    * `cd no_ngram`
-    * `python LR_3gram.py`
-  2. CNN
-    * `cd no_cnn`
-    * `python Kim_CNN_keras.py`
-  3. Bi-LSTM
-    * `cd bilstm`
-    * `python BiLSTM.py`
-  4. FEDA
-    * `cd daume`
-    * `python build_vects_clfs.py`
-  5. DANN
-    * `cd dann`
-    * single domain: `python DANN_keras_1.py`
-    * multi domains: `python DANN_keras_sample_multi_domain_cnn.py`
+---
 
-### NUFA
-  1. NUFA
-    * `cd nufa`
-    * single domain:
-      * `python DANN_keras_sample_single_domain_lstm3.py`
-      * You can manually remove the adversarial training.
-      * no-shared bi-lstm: `python DANN_keras_sample_single_domain_lstm3_noshared.py`
-  2. NUFA-all
-    * `python DANN_keras_sample_multi_domain_lstm3.py`
-    * You can manually remove the adversarial training.
-  3. NUFA-weighted
-    * `python DANN_keras_sample_multi_domain_lstm3_weighted.py`
-
-## G. Contact and Citation
-Contact by Email: [xiaolei.huang@colorado.edu](mailto:xiaolei.huang@colorado.edu)
-
-```
-@inproceedings{huang-paul-2019-neural,
-    title = "Neural User Factor Adaptation for Text Classification: Learning to Generalize Across Author Demographics",
-    author = "Huang, Xiaolei  and
-      Paul, Michael J.",
-    booktitle = "Proceedings of the Eighth Joint Conference on Lexical and Computational Semantics (*{SEM} 2019)",
-    month = jun,
-    year = "2019",
-    address = "Minneapolis, Minnesota",
-    publisher = "Association for Computational Linguistics",
-    url = "https://www.aclweb.org/anthology/S19-1015",
-    pages = "136--146",
-    abstract = "Language use varies across different demographic factors, such as gender, age, and geographic location. However, most existing document classification methods ignore demographic variability. In this study, we examine empirically how text data can vary across four demographic factors: gender, age, country, and region. We propose a multitask neural model to account for demographic variations via adversarial training. In experiments on four English-language social media datasets, we find that classification performance improves when adapting for user factors.",
-}
-```
+> 本仓库由上游项目 fork 而来，原始说明见[上游仓库](https://github.com/xiaoleihuang/NUFA)。
